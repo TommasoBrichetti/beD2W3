@@ -35,6 +35,57 @@ public class Main {
         }
 
     }
+    public static void RemoveEvento(int id) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestioneeventi");
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction et = em.getTransaction();
+
+        if (findEvento(id) != null){
+            et.begin();
+
+
+            em.remove(findEvento(id));
+            et.commit();
+
+            em.close();
+            emf.close();
+        }
+
+    }
+    public static void RemovePersona(int id) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestioneeventi");
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction et = em.getTransaction();
+
+        if (findPersona(id) != null){
+            et.begin();
+
+
+            em.remove(findPersona(id));
+            et.commit();
+
+            em.close();
+            emf.close();
+        }
+
+    }
+    public static void RemoveLocation(int id) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestioneeventi");
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction et = em.getTransaction();
+
+        if (findLocation(id) != null){
+            et.begin();
+
+
+            em.remove(findLocation(id));
+            et.commit();
+
+            em.close();
+            emf.close();
+        }
+
+    }
     public static void insertPersona() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestioneeventi");
         EntityManager em = emf.createEntityManager();
